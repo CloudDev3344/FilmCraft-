@@ -481,6 +481,9 @@ pub struct UiState {
     /// Text to Speech panel: the script and voice settings being written or edited.
     #[serde(default)]
     pub tts: crate::panels::tts::TtsDraft,
+    /// Plugins panel: configuration and state for extension plugins.
+    #[serde(default)]
+    pub plugins: crate::panels::plugins::PluginsUiState,
     /// Export mode: settings, preset, destination, range, the Preset Manager and Quick Export.
     #[serde(default)]
     pub export: crate::panels::export_mode::ExportUi,
@@ -1016,6 +1019,7 @@ impl Default for UiState {
             keys: Default::default(),
             project_panel: Default::default(),
             media_browser: Default::default(),
+            plugins: Default::default(),
         }
     }
 }

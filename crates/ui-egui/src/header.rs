@@ -112,6 +112,9 @@ pub fn show(app: &mut FilmcraftApp, ui: &mut egui::Ui, rect: Rect) {
     if appearance.clicked() {
         crate::panels::settings::cycle_appearance(app, ui.ctx());
     }
+    if btn(ui, Icon::Sparkle, "plugins", "Plugins / ส่วนขยาย", app).clicked() {
+        app.show_panel(crate::dock::PanelKind::Plugins);
+    }
     let ws_resp = btn(ui, Icon::Workspaces, "workspaces", tl!("Workspaces"), app);
     // workspace name (caps)
     let ws = crate::i18n::t(&app.ui.workspace).to_uppercase();
